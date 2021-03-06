@@ -21,16 +21,26 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath 'com.android.tools.build:gradle:3.3.1'
+        classpath 'com.google.gms:google-services:4.0.0'  // Google Services plugin
         classpath "com.qihoo360.replugin:replugin-plugin-gradle:2.3.4"
     }
 }
 
 allprojects {
     repositories {
+        mavenCentral()
         mavenLocal()
         google()
         jcenter()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        maven { url 'https://repo1.maven.org/maven2' }
+        maven { url 'https://maven.google.com' }
+        maven { url "https://jitpack.io" }
+        maven { url 'http://developer.huawei.com/repo/' }
     }
 }
 

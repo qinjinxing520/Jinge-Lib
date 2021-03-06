@@ -48,6 +48,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:28.0.0"
+    implementation files('libs\\okhttp-3.12.1.jar')
     testImplementation 'junit:junit:4.12'
 
     implementation 'com.squareup.okhttp:okhttp:2.4.0'
@@ -69,6 +70,6 @@ dependencies {
 
     implementation(name: 'awp_sdk', ext: 'aar')
 
-    implementation "com.facebook.react:react-native:0.59.2"  // From node_modules
+    implementation(name: 'react-native-0.59.2', ext: 'aar')
 
 }
